@@ -145,6 +145,12 @@ export const content = {
       subtitle: 'Ключевые показатели и опыт по проектам Zillow, Capella University, Dental America и ПГК.',
       description:
         'Сводные результаты из портфолио: 367K+ лидов, рекламный бюджет $621K и средний ROAS 4,1x. В резюме отражены ключевые достижения по проектам Zillow, Capella University, Dental America и Первая Грузовая Компания (ПГК).',
+      highlights: [
+        'Zillow — масштабирование лидогенерации и улучшение управляемости воронки.',
+        'Capella University — усиление эффективности образовательной воронки и качества лидов.',
+        'Dental America — рост целевых обращений и повышение окупаемости каналов.',
+        'ПГК — развитие B2B-лидогенерации и прозрачности по этапам воронки.'
+      ],
       downloadLabel: 'Скачать резюме'
     },
     contacts: {
@@ -279,7 +285,7 @@ export const content = {
         },
         {
           id: 'pgk',
-          title: 'First Freight Company (PGK)',
+          title: 'Первая Грузовая Компания (ПГК)',
           period: 'Russia · B2B Logistics',
           summary: 'B2B lead generation and greater transparency of marketing performance in logistics.',
           metrics: ['B2B leads', 'CPL', 'Stage conversion'],
@@ -303,7 +309,13 @@ export const content = {
       title: 'Stanislav Begun Resume',
       subtitle: 'Key metrics and project experience across Zillow, Capella University, Dental America, and PGK.',
       description:
-        'Portfolio summary highlights: 367K+ leads, $621K ad budget, and average ROAS of 4.1x. The resume includes core outcomes for Zillow, Capella University, Dental America, and First Freight Company (PGK).',
+        'Portfolio summary highlights: 367K+ leads, $621K ad budget, and average ROAS of 4.1x. The resume includes core outcomes for Zillow, Capella University, Dental America, and Первая Грузовая Компания (ПГК).',
+      highlights: [
+        'Zillow — scaled lead generation and improved funnel control.',
+        'Capella University — stronger education funnel efficiency and lead quality.',
+        'Dental America — higher volume of qualified inquiries and better channel payback.',
+        'Первая Грузовая Компания (ПГК) — stronger B2B lead generation and stage-level visibility.'
+      ],
       downloadLabel: 'Download Resume'
     },
     contacts: {

@@ -7,6 +7,13 @@ export default function ResumePage({ data }) {
       <SectionTitle overline={data.overline} title={data.title} subtitle={data.subtitle} />
       <div className="rounded-3xl border border-mint/30 bg-gradient-to-br from-mint/10 via-transparent to-transparent p-8">
         <p className="mb-6 max-w-2xl text-white/75">{data.description}</p>
+        {data.highlights?.length ? (
+          <ul className="mb-6 list-disc space-y-2 pl-5 text-white/75">
+            {data.highlights.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        ) : null}
         <a className="btn-primary" href={resumeUrl} download>
           {data.downloadLabel}
         </a>
