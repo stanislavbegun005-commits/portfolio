@@ -14,13 +14,16 @@ export default function CasesPage({ data }) {
             <p className="mb-3 text-xs uppercase tracking-[0.2em] text-mint/80">{item.period}</p>
             <h3 className="mb-3 text-2xl font-light">{item.title}</h3>
             <p className="mb-6 text-white/70">{item.summary}</p>
-            <div className="mb-6 flex flex-wrap gap-2">
-              {item.metrics.map((metric) => (
-                <span key={metric} className="rounded-full border border-mint/30 px-3 py-1 text-xs text-mint/90">
-                  {metric}
-                </span>
+
+            <div className="mb-6 overflow-hidden rounded-2xl border border-white/10">
+              {(item.cardMetrics || []).map((metric) => (
+                <div key={`${metric.label}-${metric.value}`} className="grid grid-cols-[1fr_auto] border-b border-white/10 px-4 py-2 text-sm last:border-b-0">
+                  <span className="text-white/65">{metric.label}</span>
+                  <span className="text-mint">{metric.value}</span>
+                </div>
               ))}
             </div>
+
             <Link to={`/cases/${item.id}`} className="btn-secondary inline-flex">
               {data.caseCta}
             </Link>
