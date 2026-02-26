@@ -5,11 +5,25 @@ export default function AboutPage({ data }) {
     <section>
       <SectionTitle overline={data.overline} title={data.title} subtitle={data.subtitle} />
       <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
-        <img src="/photo.jpg" alt={data.photoAlt} className="w-full rounded-3xl border border-white/10 object-cover" />
+        <img
+          src={`${import.meta.env.BASE_URL}photo.jpg`}
+          alt={data.photoAlt}
+          className="w-full rounded-3xl border border-white/10 object-cover"
+        />
         <div className="space-y-5">
           {data.paragraphs.map((paragraph) => (
             <p key={paragraph} className="text-white/75">{paragraph}</p>
           ))}
+          {data.usefulIf && (
+            <article className="rounded-2xl border border-mint/30 bg-mint/5 p-5">
+              <h3 className="mb-3 text-mint">{data.usefulIf.title}</h3>
+              <ul className="space-y-2 text-sm text-white/75">
+                {data.usefulIf.items.map((item) => (
+                  <li key={item} className="list-inside list-disc">{item}</li>
+                ))}
+              </ul>
+            </article>
+          )}
           <div className="grid gap-4 sm:grid-cols-2">
             {data.focus.map((item) => (
               <article key={item.title} className="rounded-2xl border border-mint/30 bg-mint/5 p-4">

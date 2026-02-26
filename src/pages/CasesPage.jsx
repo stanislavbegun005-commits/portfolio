@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom'
 import SectionTitle from '../components/SectionTitle'
 
+function splitMetric(metric) {
+  const [label, ...rest] = metric.split(':')
+  if (!rest.length) {
+    return { label: 'Метрика', value: metric }
+  }
+
+  return { label: label.trim(), value: rest.join(':').trim() }
+}
+
 export default function CasesPage({ data }) {
   return (
     <section>
@@ -14,12 +23,17 @@ export default function CasesPage({ data }) {
             <p className="mb-3 text-xs uppercase tracking-[0.2em] text-mint/80">{item.period}</p>
             <h3 className="mb-3 text-2xl font-light">{item.title}</h3>
             <p className="mb-6 text-white/70">{item.summary}</p>
-            <div className="mb-6 flex flex-wrap gap-2">
-              {item.metrics.map((metric) => (
-                <span key={metric} className="rounded-full border border-mint/30 px-3 py-1 text-xs text-mint/90">
-                  {metric}
-                </span>
-              ))}
+            <div className="mb-6 grid gap-3 sm:grid-cols-2">
+              {item.metrics.map((metric) => {
+                const normalized = splitMetric(metric)
+
+                return (
+                  <article key={metric} className="rounded-xl border border-mint/30 bg-mint/5 p-3">
+                    <p className="text-xs uppercase tracking-[0.12em] text-mint/80">{normalized.label}</p>
+                    <p className="mt-1 text-sm text-white/90">{normalized.value}</p>
+                  </article>
+                )
+              })}
             </div>
             <Link to={`/cases/${item.id}`} className="btn-secondary inline-flex">
               {data.caseCta}
