@@ -1,11 +1,12 @@
 import SectionTitle from '../components/SectionTitle'
 
 export default function AboutPage({ data }) {
+  const photoUrl = `${import.meta.env.BASE_URL}photo.jpg`
   return (
     <section>
       <SectionTitle overline={data.overline} title={data.title} subtitle={data.subtitle} />
       <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
-        <img src="/photo.jpg" alt={data.photoAlt} className="w-full rounded-3xl border border-white/10 object-cover" />
+        <img src={photoUrl} alt={data.photoAlt} className="w-full rounded-3xl border border-white/10 object-cover" />
         <div className="space-y-5">
           {data.paragraphs.map((paragraph) => (
             <p key={paragraph} className="text-white/75">{paragraph}</p>

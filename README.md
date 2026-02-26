@@ -34,6 +34,6 @@ npm run preview
 ## Base path
 Vite base is configured for this repository:
 
-`/stanislavbegun005-commits/portfolio/`
+`/portfolio/`
 
 If repository path changes, update `base` in `vite.config.js`.

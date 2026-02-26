@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 export default function HomePage({ data, nav }) {
+  const photoUrl = `${import.meta.env.BASE_URL}photo.jpg`
   return (
     <section className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
       <div className="animate-slide-up space-y-6">
@@ -23,7 +24,7 @@ export default function HomePage({ data, nav }) {
       <div className="relative animate-fade-in">
         <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-mint/20 to-transparent blur-2xl" />
         <img
-          src="/photo.jpg"
+          src={photoUrl}
           alt={data.photoAlt}
           className="relative w-full rounded-[2rem] border border-mint/30 object-cover shadow-card"
         />
